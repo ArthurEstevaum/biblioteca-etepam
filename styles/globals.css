@@ -8,10 +8,14 @@
 }
 
 .secondary-glass {
-    @apply bg-black bg-opacity-50 backdrop-blur-lg
+    @apply bg-black bg-opacity-60 backdrop-blur-lg
     bg-clip-padding 
 }
 
 .primary-glass-screens {
     @apply sm:bg-black sm:bg-opacity-40 sm:backdrop-blur-lg
+}
+
+.light-glass {
+    @apply bg-white bg-opacity-30 backdrop-blur-sm bg-clip-padding
 }
