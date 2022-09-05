@@ -31,7 +31,7 @@ export default function NavBar() {
                 <div id='search-bar' className={'flex rounded-3xl p-1 space-x-4 text-gray-100 md:mr-[5vh] lg:mr-[20vh] xl:mr-[30vh] sm:w-9/12 border-[1px] border-transparent focus-within:border-neutral-100/75 transition ease-linear delay-75 duration-300 ' + switchSearchbarColor()}
                 onMouseLeave={() => setDisplayInput(false)} >
 
-                    <button className='text-gray-100 hover:text-gray-900 hover:bg-gray-100 hover:opacity-25 sm:p-3 rounded-full'
+                    <button className='text-gray-100 hover:text-gray-900 hover:bg-gray-100 hover:opacity-25 sm:p-3 rounded-full transition duration-500 ease-in-out'
                     onClick={() => setDisplayInput(true)}>
                         <FaSistrix />
                     </button>
@@ -39,11 +39,11 @@ export default function NavBar() {
                     <input type='text' placeholder='Procure um livro' id='input-search' className={'sm:inline outline-none bg-transparent w-10/12  ' + switchInputDisplay()} />
                 </div>
 
-                <button className="text-gray-100 hover:text-gray-900 hover:bg-gray-100 hover:opacity-25 sm:px-4 rounded-full">
+                <button className="text-gray-100 hover:text-gray-900 hover:bg-gray-100 hover:opacity-25 sm:px-4 rounded-full transition duration-500 ease-in-out">
                     <FaHeart />
                 </button>
 
-                <button className="text-gray-100 hover:text-gray-900 hover:bg-gray-100 hover:opacity-25 sm:px-4 rounded-full">
+                <button className="text-gray-100 hover:text-gray-900 hover:bg-gray-100 hover:opacity-25 sm:px-4 rounded-full transition duration-500 ease-in-out">
                     <FaUser />
                 </button>
             </div> 
