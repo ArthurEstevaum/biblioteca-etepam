@@ -3,6 +3,7 @@ import "pure-react-carousel/dist/react-carousel.es.css";
 import { FaChevronDown } from "react-icons/fa";
 
 export default function HeaderHome() {
+
     return (
         <section className="bg-cover bg-no-repeat h-[60vh] sm:h-[100vh] bg-center relative" style={{backgroundImage: 'url(/etepam-background-blur.png)'}}>
 
@@ -30,9 +31,9 @@ export default function HeaderHome() {
                     </Slide>
                 </Slider>
             </CarouselProvider>
-            <a href="#bookcatalog" className="text-white absolute bottom-[15%] ml-[50%] p-2 sm:p-4 lg:p-6 hover:bg-white hover:bg-opacity-25 sm:px-4 rounded-full transition duration-500 ease-in-out">
+            <button onClick={() => bookcatalog.scrollIntoView({behavior:'smooth'})} className="text-white absolute bottom-[15%] ml-[50%] p-2 sm:p-4 lg:p-6 hover:bg-white hover:bg-opacity-25 sm:px-4 rounded-full transition duration-500 ease-in-out">
                 <FaChevronDown size={20} />
-            </a>
+            </button>
         </section>
     )
 }

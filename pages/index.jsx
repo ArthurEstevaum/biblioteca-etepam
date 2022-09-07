@@ -3,6 +3,7 @@ import backgroundImage from '../public/background.png'
 import CarouselTest from '../components/Carousel'
 import HeaderHome from '../components/HeaderHome'
 import BookCatalog from '../components/BookCatalog'
+import Footer from '../components/Footer'
 
 
 export default function Home() {
