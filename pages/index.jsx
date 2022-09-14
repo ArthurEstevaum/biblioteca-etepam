@@ -9,8 +9,7 @@ export default function Home() {
     return (
         <>
             <Head>
-                <title>Biblioteca ETEPAM</title>
-                       
+                <title>Biblioteca ETEPAM</title>       
             </Head>
             <div id="container" className='h-full bg-cover' style={{backgroundImage: 'url(/background.png)'}}>
                     <NavBar />

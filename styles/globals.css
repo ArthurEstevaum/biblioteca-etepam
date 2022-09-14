@@ -1,6 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+    @apply font-roboto
+}
 
 .primary-glass {
     @apply bg-black bg-opacity-40 backdrop-blur-lg
@@ -8,7 +13,7 @@
 }
 
 .secondary-glass {
-    @apply bg-black bg-opacity-60 backdrop-blur-lg
+    @apply bg-black bg-opacity-50 backdrop-blur-lg
     bg-clip-padding 
 }
 
@@ -23,4 +28,25 @@
 .tertiary-glass {
     @apply bg-black bg-opacity-50 backdrop-blur-lg
     bg-clip-padding 
+}
+
+label {
+    @apply block text-gray-400 
+}
+
+input, select {
+    @apply bg-black opacity-40
+     rounded-lg pr-5 pl-2 py-1
+     w-2/3 md:w-1/2 lg:w-5/12 text-sm
+     text-gray-200 shadow-sm shadow-gray-800
+     focus:outline-none
+     focus:ring-2 ring-gray-700
+     ease-in-out duration-500
+}
+
+.button {
+    @apply mt-10 text-gray-200
+    bg-black opacity-40 border border-gray-600
+    p-2 rounded-md hover:ring-2
+    hover:opacity-100 ease-in-out duration-300
 }

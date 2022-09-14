@@ -99,7 +99,7 @@ export default function Carousel({ categoryName }) {
                             <Slide className="carousel__inner-slideLarge" index={0}>
                                 <div className="gallery-cell w-full h-full">
                                     <div className="relative w-full h-full lg:block hidden">
-                                        <Card />
+                                        <Card name={x}/>
                                     </div>
                                     <div className="relative w-full h-full lg:hidden">
                                        <Card />
