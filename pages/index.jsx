@@ -5,7 +5,7 @@ import BookCatalog from '../components/BookCatalog'
 import Head from 'next/head'
 
 
-export default function Home() {
+export default function Home(data) {
     return (
         <>
             <Head>
@@ -15,9 +15,17 @@ export default function Home() {
                     <NavBar />
                     <main>
                         <HeaderHome />
-                        <BookCatalog />
+                        <BookCatalog books={data.books} />
                     </main>
             </div>
         </>
     )
+}
+
+export async function getStaticProps() {
+    const res = await fetch('http://localhost:5000/books')
+    const books = await res.json()
+    return {
+        props: {books}
+    }
 }

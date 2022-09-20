@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import LogoAberta from '../public/etepam-logo-aberta.svg'
 import { FaSistrix, FaHeart, FaUser } from 'react-icons/fa'
+import Link from 'next/link'
 
 export default function NavBar() {
 
@@ -21,11 +21,10 @@ export default function NavBar() {
     const switchSearchbarColor = () => displayInput? searchbarStyles.active : searchbarStyles.hidden
 
     return (
-        <nav className='primary-glass sticky top-0 z-10 flex justify-between items-center p-4 border-b-[1px] border-gray-600'>
+        <nav className='secondary-glass sticky top-0 z-10 flex justify-between items-center p-4 border-b-[1px] border-gray-600'>
 
             <div id='logo-container' className='md:ml-10 sm:ml-8 ml-4 cursor-pointer'>
-                <img src='https://raw.githubusercontent.com/VitorMendonca62/biblioteca-etepam/main/public/assets/img/etepam-logo-fechada.png' alt="logo" className='w-7/12 lg:hidden'/>
-                <LogoAberta className='tex-gray-200 hidden lg:block' />
+                <Link href={`/`}><img src='https://raw.githubusercontent.com/VitorMendonca62/biblioteca-etepam/main/public/assets/img/etepam-logo-fechada.png' alt="logo" className='w-7/12'/></Link>
             </div>
 
             <div id='icons-bar' className='flex justify-end md:mr-8 sm:mr-6 space-x-6 mr-2 w-2/3'>

@@ -2,15 +2,17 @@ import React, { useState } from "react";
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
 import Card from "./Card";
+import Link from "next/link";
 
 /* Install pure-react-carousel using -> npm i pure-react-carousel */
 
-export default function Carousel({ categoryName }) {
+export default function Carousel({ books }) {
+
     return (
         <div className="2xl:mx-auto 2xl:container flex justify-center">
             <div className="2xl:px-20 px-6 py-6 w-full lg:w-4/5">
                 {/* Carousel for Small-Sized Screen */}
-                <CarouselProvider className="relative block sm:hidden" naturalSlideWidth={100} isIntrinsicHeight={true} totalSlides={6} visibleSlides={2} step={1} infinite={true}>
+                <CarouselProvider className="relative block sm:hidden" naturalSlideWidth={100} isIntrinsicHeight={true} totalSlides={books.length} visibleSlides={2} step={1} infinite={true}>
                     <div className="js-flickity flex justify-center items-center">
                         <ButtonBack role="button" aria-label="slide backward" className="w-12 h-12 md:w-14 md:h-14 rounded-full flex justify-center items-center bg-white border border-gray-300 hover:bg-gray-400 absolute z-30 left-0 ml-8 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer" id="prev">
                             <svg width={8} height={14} viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -18,66 +20,18 @@ export default function Carousel({ categoryName }) {
                             </svg>
                         </ButtonBack>
                         <Slider>
-                            <Slide index={0}>
-                                <div className="gallery-cell lg:mr-7 mr-6 lg:w-1/2 sm:w-96 w-full h-full">
-                                    <div className="relative w-full h-full lg:block hidden">
-                                        <Card />
+                            {books.map((book, index) => (<Slide key={index} index={index}>
+                                <Link href={`/books/${book.id}`}>
+                                    <div className="gallery-cell lg:mr-7 mr-6 lg:w-1/2 sm:w-96 w-full h-full">
+                                        <div className="relative w-full h-full lg:block hidden">
+                                            <Card title={book.title} author={book.author} image={book.image} />
+                                        </div>
+                                        <div className="relative w-full h-full lg:hidden">
+                                            <Card title={book.title} author={book.author} image={book.image} />
+                                        </div>
                                     </div>
-                                    <div className="relative w-full h-full lg:hidden">
-                                       <Card />
-                                    </div>
-                                </div>
-                            </Slide>
-                            <Slide index={1}>
-                                <div className="gallery-cell lg:mr-7 mr-6 lg:w-1/2 sm:w-96 w-full h-full">
-                                    <div className="relative w-full h-full lg:block hidden">
-                                        <Card />
-                                    </div>
-                                    <div className="relative w-full h-full lg:hidden">
-                                        <Card />
-                                    </div>
-                                </div>
-                            </Slide>
-                            <Slide index={2}>
-                                <div className="gallery-cell lg:mr-7 mr-6 lg:w-1/2 sm:w-96 w-full h-full">
-                                    <div className="relative w-full h-full lg:block hidden">
-                                        <Card />
-                                    </div>
-                                    <div className="relative w-full h-full lg:hidden">
-                                        <Card />
-                                    </div>
-                                </div>
-                            </Slide>
-                            <Slide index={3}>
-                                <div className="gallery-cell lg:mr-7 mr-6 lg:w-1/2 sm:w-96 w-full h-full">
-                                    <div className="relative w-full h-full lg:block hidden">
-                                        <Card />
-                                    </div>
-                                    <div className="relative w-full h-full lg:hidden">
-                                        <Card />
-                                    </div>
-                                </div>
-                            </Slide>
-                            <Slide index={4}>
-                                <div className="gallery-cell lg:mr-7 mr-6 lg:w-1/2 sm:w-96 w-full h-full">
-                                    <div className="relative w-full h-full lg:block hidden">
-                                        <Card />
-                                    </div>
-                                    <div className="relative w-full h-full lg:hidden">
-                                        <Card />
-                                    </div>
-                                </div>
-                            </Slide>
-                            <Slide index={5}>
-                                <div className="gallery-cell lg:mr-7 mr-6 lg:w-1/2 sm:w-96 w-full h-full">
-                                    <div className="relative w-full h-full lg:block hidden">
-                                        <Card />
-                                    </div>
-                                    <div className="relative w-full h-full lg:hidden">
-                                        <Card />
-                                    </div>
-                                </div>
-                            </Slide>
+                                </Link>
+                            </Slide>))}
                         </Slider>
                         <ButtonNext role="button" aria-label="slide forward" className="w-12 h-12 md:w-14 md:h-14 rounded-full flex justify-center items-center bg-white border border-gray-300 hover:bg-gray-400 absolute z-30 right-0 mr-8 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800" id="next">
                             <svg width={8} height={14} viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -88,7 +42,7 @@ export default function Carousel({ categoryName }) {
                 </CarouselProvider>
 
                 {/* Carousel for Medium and Large-Sized Screen */}
-                <CarouselProvider className="relative hidden sm:block" naturalSlideWidth={100} isIntrinsicHeight={true} totalSlides={6} visibleSlides={2} step={1} infinite={true} currentSlide={1}>
+                <CarouselProvider className="relative hidden sm:block" naturalSlideWidth={100} isIntrinsicHeight={true} totalSlides={books.length} visibleSlides={2} step={1} infinite={true} currentSlide={1}>
                     <div className="js-flickity flex justify-center items-center">
                         <ButtonBack role="button" aria-label="slide backward" className="w-12 h-12 md:w-14 md:h-14 rounded-full flex justify-center items-center bg-white border border-gray-300 hover:bg-gray-400 absolute z-30 left-0 ml-8 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer" id="prev">
                             <svg width={8} height={14} viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -96,66 +50,19 @@ export default function Carousel({ categoryName }) {
                             </svg>
                         </ButtonBack>
                         <Slider className="carousel__sliderLarge">
-                            <Slide className="carousel__inner-slideLarge" index={0}>
-                                <div className="gallery-cell w-full h-full">
-                                    <div className="relative w-full h-full lg:block hidden">
-                                        <Card />
+                            {books.map((book, index) => (
+                            <Slide className="carousel__inner-slideLarge" key={index} index={index}>
+                                <Link href={`/books/${book.id}`}>
+                                    <div className="gallery-cell w-full h-full">
+                                        <div className="relative w-full h-full lg:block hidden">
+                                            <Card title={book.title} author={book.author} image={book.image} />
+                                        </div>
+                                        <div className="relative w-full h-full lg:hidden">
+                                            <Card title={book.title} author={book.author} image={book.image} />
+                                        </div>
                                     </div>
-                                    <div className="relative w-full h-full lg:hidden">
-                                       <Card />
-                                    </div>
-                                </div>
-                            </Slide>
-                            <Slide className="carousel__inner-slideLarge" index={1}>
-                                <div className="gallery-cell w-full h-full">
-                                    <div className="relative w-full h-full lg:block hidden">
-                                        <Card />
-                                    </div>
-                                    <div className="relative w-full h-full lg:hidden">
-                                        <Card />
-                                    </div>
-                                </div>
-                            </Slide>
-                            <Slide className="carousel__inner-slideLarge" index={2}>
-                                <div className="gallery-cell w-full h-full">
-                                    <div className="relative w-full h-full lg:block hidden">
-                                        <Card />
-                                    </div>
-                                    <div className="relative w-full h-full lg:hidden">
-                                        <Card />
-                                    </div>
-                                </div>
-                            </Slide>
-                            <Slide className="carousel__inner-slideLarge" index={3}>
-                                <div className="gallery-cell w-full h-full">
-                                    <div className="relative w-full h-full lg:block hidden">
-                                        <Card />
-                                    </div>
-                                    <div className="relative w-full h-full lg:hidden">
-                                        <Card />
-                                    </div>
-                                </div>
-                            </Slide>
-                            <Slide className="carousel__inner-slideLarge" index={4}>
-                                <div className="gallery-cell w-full h-full">
-                                    <div className="relative w-full h-full lg:block hidden">
-                                        <Card />
-                                    </div>
-                                    <div className="relative w-full h-full lg:hidden">
-                                        <Card />
-                                    </div>
-                                </div>
-                            </Slide>
-                            <Slide className="carousel__inner-slideLarge" index={5}>
-                                <div className="gallery-cell w-full h-full">
-                                    <div className="relative w-full h-full lg:block hidden">
-                                        <Card />
-                                    </div>
-                                    <div className="relative w-full h-full lg:hidden">
-                                        <Card />
-                                    </div>
-                                </div>
-                            </Slide>
+                                </Link>
+                            </Slide>))}
                         </Slider>
                         <ButtonNext role="button" aria-label="slide forward" className="w-12 h-12 md:w-14 md:h-14 rounded-full flex justify-center items-center bg-white border border-gray-300 hover:bg-gray-400 absolute z-30 right-0 mr-8 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800" id="next">
                             <svg width={8} height={14} viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">

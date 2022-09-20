@@ -1,8 +1,8 @@
 export default function CadastroUser() {
     return (
-        <div className="bg-gray-100 bg-cover w-full h-full" style={{backgroundImage: 'url(/background.png)'}}>
-            <main className="w-10/12 sm:w-9/12 lg:w-6/12 m-auto space-y-6">
-                <form action="">
+        <div className="bg-gray-100 bg-cover min-h-screen" style={{backgroundImage: 'url(/background.png)'}}>
+            <main className="w-10/12 sm:w-9/12 lg:w-6/12 m-auto space-y-6 h-full">
+                <form action="" className="h-full">
                     <div id="title" className="secondary-glass rounded-t-md border-b border-gray-800 py-8 px-2 space-y-4 sm:space-y-0">
                         <a href=" /">
                             <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 ml-10 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
@@ -13,22 +13,22 @@ export default function CadastroUser() {
                     </div>
                     <div className="primary-glass text-center space-y-3 pt-8 rounded-b-md">
                         <label htmlFor="nome">Nome completo</label>
-                        <input type="text" id="nome" placeholder="Nome completo" required />
+                        <input type="text" id="nome" placeholder="Nome completo" required className="input" />
 
                         <label htmlFor="email">Email constitucional</label>
-                        <input type="email" id="email" placeholder="seunome@aluno.educacao.pe.gov.br" required />
+                        <input type="email" id="email" placeholder="seunome@aluno.educacao.pe.gov.br" required className="input" />
 
                         <label htmlFor="password">Senha</label>
-                        <input type="password" id="password" placeholder="Senha" required maxLength="15" />
+                        <input type="password" id="password" placeholder="Senha" required maxLength="15" className="input" />
 
                         <label htmlFor="confirmPassword">Confirmar senha</label>
-                        <input type="password" id="passwordConfirm" placeholder="Confirmar senha" required maxLength="15" />
+                        <input type="password" id="passwordConfirm" placeholder="Confirmar senha" required maxLength="15" className="input" />
 
                         <label htmlFor="telefone">Número de telefone</label>
-                        <input type="text" id="telefone" placeholder="(81) 9xxxx-xxxx" required maxLength="15" />
+                        <input type="text" id="telefone" placeholder="(81) 9xxxx-xxxx" required maxLength="15" className="input" />
 
                         <label htmlFor="matrícula">Matrícula</label>
-                        <input type="text" id="matricula" placeholder="Matrícula" required maxLength="7" />
+                        <input type="text" id="matricula" placeholder="Matrícula" required maxLength="7" className="input" />
 
 
                         <label htmlFor="modalidade">Modalidade de ensino</label>
