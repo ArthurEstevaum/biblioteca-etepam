@@ -3,22 +3,15 @@ import backgroundImage from '../public/background.png'
 import HeaderHome from '../components/HeaderHome'
 import BookCatalog from '../components/BookCatalog'
 import Head from 'next/head'
+import Layout from '../components/Layout'
 
 
 export default function Home(data) {
     return (
-        <>
-            <Head>
-                <title>Biblioteca ETEPAM</title>       
-            </Head>
-            <div id="container" className='h-full bg-cover' style={{backgroundImage: 'url(/background.png)'}}>
-                    <NavBar />
-                    <main>
-                        <HeaderHome />
-                        <BookCatalog books={data.books} />
-                    </main>
-            </div>
-        </>
+        <main>
+            <HeaderHome />
+            <BookCatalog books={data.books} />
+        </main>
     )
 }
 
@@ -28,4 +21,12 @@ export async function getStaticProps() {
     return {
         props: {books}
     }
+}
+
+Home.getLayout = function getLayout(page) {
+    return (
+        <Layout>
+            {page}
+        </Layout>
+    )
 }

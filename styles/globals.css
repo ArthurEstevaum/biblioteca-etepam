@@ -52,7 +52,7 @@ label {
 }
 
 html {
-    @apply min-h-full
+    @apply max-h-screen
 }
 
 body {

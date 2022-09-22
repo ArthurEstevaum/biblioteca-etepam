@@ -1,8 +1,10 @@
 import { FaStar } from 'react-icons/fa'
-import NavBar from '../../components/NavBar'
+import Layout from '../../components/Layout'
 
 export default function Book(data) {
 
+        //criar uma array com o mesmo comprimento do número de letras
+        //para usar .map na array e imprimir estrelas de acordo com o comprimento da array
         const numeroEstrelas = parseInt(data.book.stars)
         const starsArray = []
         for (let i = 1; i <= numeroEstrelas; i++) {
@@ -10,8 +12,6 @@ export default function Book(data) {
         }
 
     return (
-        <div className="bg-cover min-h-screen" style={{backgroundImage: 'url(/background.png)'}}>
-            <NavBar />
             <main className="sm:grid grid-cols-[40%_60%] w-full h-full primary-glass pt-5 rounded-lg">
                 <section id="title-cover" className="mx-auto space-y-10">
                     <h1 className="text-gray-200 border-b border-gray-800 p-4 text-center text-lg font-semibold w-full">{data.book.title}</h1>
@@ -36,7 +36,6 @@ export default function Book(data) {
                     </div>
                 </section>
             </main>
-        </div>
     )
 }
 
@@ -64,4 +63,12 @@ export async function getStaticPaths() {
     }})
 
     return { paths, fallback: true }
+}
+
+Book.getLayout = function getLayout(page) {
+    return (
+        <Layout>
+            {page}
+        </Layout>
+    )
 }
