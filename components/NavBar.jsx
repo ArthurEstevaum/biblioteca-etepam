@@ -39,7 +39,7 @@ export default function NavBar({ handleInputValue }) {
                         </button>
                     </Link>
 
-                    <input type='text' placeholder='Procure um livro' id='input-search' className={'sm:inline outline-none bg-transparent w-10/12  ' + switchInputDisplay()} 
+                    <input type='text' autoComplete='on' placeholder='Procure um livro' id='input-search' className={'sm:inline outline-none bg-transparent w-10/12  ' + switchInputDisplay()} 
                     onChange={handleInputValue} />
                 </div>
 

@@ -1,5 +1,6 @@
 import { FaStar } from 'react-icons/fa'
 import Layout from '../../components/Layout'
+import Link from 'next/link'
 
 export default function Book(data) {
 
@@ -31,7 +32,7 @@ export default function Book(data) {
                             <FaStar className='text-yellow-500 w-10 inline' key={starNumber} />))}
 
                     <div id="buttons" className="flex justify-center md:justify-start space-x-2">
-                        <button className="button inline my-4">Solicitar</button>
+                        <Link href="https://api.whatsapp.com/send?phone=5581998787714&text=Ol%C3%A1%2C%20quero%20pedir%20um%20livro!%22%3E"><button className="button inline my-4">Solicitar</button></Link>
                         <button className="button inline my-4">Baixar</button>
                     </div>
                 </section>

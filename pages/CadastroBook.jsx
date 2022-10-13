@@ -39,7 +39,7 @@ export default function CadastroBook() {
                         <h1 className="text-white text-center text-xl sm:2xl font-bold">Cadastro de livros</h1>
                     </div>
 
-                    <div className="primary-glass text-center space-y-3 pt-8 rounded-b-lg">
+                    <div className="primary-glass text-center space-y-4 pt-8 rounded-b-lg">
                         <label htmlFor="title">Título</label>
                         <input type="text" name="title" id="title" className="input" required />
 
@@ -53,7 +53,7 @@ export default function CadastroBook() {
                         <input type="number" name="stars" id="stars" min={1} max={5} className="input" required />
 
                         <label htmlFor="synopsis">Sinopse</label>
-                        <input type="text" name="synopsis" id="synopsis" className="input" required />
+                        <input type="text" name="synopsis" id="synopsis" className="input" required maxLength={1000} />
 
                         <label htmlFor="quantity">Quantidade disponível</label>
                         <input type="number" name="quantity" id="quantity" className="input" required />
