@@ -1,13 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
 import Card from "./Card";
 import Link from "next/link";
 
-/* Install pure-react-carousel using -> npm i pure-react-carousel */
-
 export default function Carousel({ books }) {
-
     return (
         <div className="2xl:mx-auto 2xl:container flex justify-center">
             <div className="2xl:px-20 px-6 py-6 w-full lg:w-4/5">
@@ -20,14 +17,14 @@ export default function Carousel({ books }) {
                             </svg>
                         </ButtonBack>
                         <Slider>
-                            {books.map((book, index) => (<Slide key={index} index={index}>
+                            {books.map((book, index) => (<Slide key={book.id} index={index}>
                                 <Link href={`/books/${book.id}`}>
                                     <div className="gallery-cell lg:mr-7 mr-6 lg:w-1/2 sm:w-96 w-full h-full">
                                         <div className="relative w-full h-full lg:block hidden">
-                                            <Card title={book.title} author={book.author} image={book.image} />
+                                            <Card title={book.title} author={book.author} linkImagem={book.linkImagem} />
                                         </div>
                                         <div className="relative w-full h-full lg:hidden">
-                                            <Card title={book.title} author={book.author} image={book.image} />
+                                            <Card title={book.title} author={book.author} linkImagem={book.linkImagem} />
                                         </div>
                                     </div>
                                 </Link>
@@ -51,14 +48,14 @@ export default function Carousel({ books }) {
                         </ButtonBack>
                         <Slider className="carousel__sliderLarge">
                             {books.map((book, index) => (
-                            <Slide className="carousel__inner-slideLarge" key={index} index={index}>
+                            <Slide className="carousel__inner-slideLarge" key={book.id} index={index}>
                                 <Link href={`/books/${book.id}`}>
                                     <div className="gallery-cell w-full h-full">
                                         <div className="relative w-full h-full lg:block hidden">
-                                            <Card title={book.title} author={book.author} image={book.image} />
+                                            <Card title={book.title} author={book.author} linkImagem={book.linkImagem} />
                                         </div>
                                         <div className="relative w-full h-full lg:hidden">
-                                            <Card title={book.title} author={book.author} image={book.image} />
+                                            <Card title={book.title} author={book.author} linkImagem={book.linkImagem} />
                                         </div>
                                     </div>
                                 </Link>

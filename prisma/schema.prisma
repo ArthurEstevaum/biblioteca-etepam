@@ -1,0 +1,46 @@
+
+
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["referentialIntegrity"]
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+model User {
+  id    Int     @id @default(autoincrement())
+  email String  @unique
+  matricula Int @unique
+  isAdmin Boolean @default(false)
+  course String?
+  ensino String?
+  telefone String
+  name  String
+  password String
+  bookOwned Book? @relation(name: "livro sobre empréstimo")
+  favouriteBooks Book[]
+}
+
+model Book {
+  id Int @id @default(autoincrement())
+  title String @unique
+  author String
+  synopsis String @db.VarChar(1000)
+  linkImagem String? 
+  stars Int @default(0)
+  quantidade Int @default(0)
+  favouritedBy User[]
+  categories Categories[]
+  ownedBy User? @relation(fields: [userId], references: [id], name: "livro sobre empréstimo")
+  userId Int? @unique 
+}
+
+model Categories {
+  id Int @id @default(autoincrement())
+  category String @unique
+  categoryBooks Book[]
+}

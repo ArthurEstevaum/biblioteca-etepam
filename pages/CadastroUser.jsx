@@ -2,7 +2,7 @@ export default function CadastroUser() {
     return (
         <div className="bg-gray-100 bg-cover min-h-screen" style={{backgroundImage: 'url(/background.png)'}}>
             <main className="w-10/12 sm:w-9/12 lg:w-6/12 m-auto space-y-6 h-full">
-                <form action="" className="h-full">
+                <form onSubmit={(event) => event.preventDefault} className="h-full">
                     <div id="title" className="secondary-glass rounded-t-md border-b border-gray-800 py-8 px-2 space-y-4 sm:space-y-0">
                         <a href=" /">
                             <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 ml-10 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
@@ -16,7 +16,9 @@ export default function CadastroUser() {
                         <input type="text" id="nome" placeholder="Nome completo" required className="input" />
 
                         <label htmlFor="email">Email constitucional</label>
-                        <input type="email" id="email" placeholder="seunome@aluno.educacao.pe.gov.br" required className="input" />
+                        <input type="email" id="email" placeholder="seunome@aluno.educacao.pe.gov.br" required
+                        pattern="[a-z]+@aluno[.]educacao[.]pe[.]gov[.]br"
+                        title="o formato do email deve ser [seunome]@aluno.educacao.pe.gov.br" className="input" />
 
                         <label htmlFor="password">Senha</label>
                         <input type="password" id="password" placeholder="Senha" required maxLength="15" className="input" />
@@ -37,13 +39,6 @@ export default function CadastroUser() {
                             <option value="subsequente">subsequente</option>
                         </select>
 
-                        <label htmlFor="série">Série</label>
-                        <select id="selectSérie">
-                            <option value="1">1° Ano</option>
-                            <option value="2">2° Ano</option>
-                            <option value="3">3° Ano</option>
-                        </select>
-
                         <label htmlFor="curso">Curso técnico</label>
                         <select id="selectCurso">
                             <option value="msi">Manutenção e Suporte em Informática</option>
@@ -54,7 +49,10 @@ export default function CadastroUser() {
 
                         <div className="space-y-5">
                             <button id="buttonLogin" className="button mt-10" type="submit">Cadastrar</button>
-                            <a href="#" className="text-gray-400 hover:text-gray-200 block text-center pb-10">Como conseguir o número da matrícula?</a>
+                            <a
+                            href="https://raw.githubusercontent.com/VitorMendonca62/biblioteca-etepam/main/public/assets/Como%20conseguir%20a%20sua%20matricula.pdf"
+                            target="_blank" hrefLang="pt-br" rel="noreferrer"  
+                            className="text-gray-400 hover:text-gray-200 block text-center pb-10">Como conseguir o número da matrícula?</a>
                         </div>
                     </div>
                 </form>

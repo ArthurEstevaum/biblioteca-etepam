@@ -1,9 +1,11 @@
-import { useState } from 'react'
+import React, { DetailedHTMLProps, PropsWithChildren, useState } from 'react'
 import { FaSistrix, FaHeart, FaUser } from 'react-icons/fa'
 import Link from 'next/link'
+import Logo from '../public/etepam-logo-lg.svg'
+import { NextPage } from 'next'
+import { HandleInputValue } from './Layout'
 
-export default function NavBar({ handleInputValue }) {
-
+const NavBar: NextPage = ({handleInputValue}: HandleInputValue) => {
     const inputStyles = {
         hidden: 'hidden',
         active: 'inline'
@@ -23,9 +25,12 @@ export default function NavBar({ handleInputValue }) {
     return (
         <nav className='secondary-glass sticky top-0 z-10 flex justify-between items-center p-4 border-b-[1px] border-gray-600'>
 
-            <div id='logo-container' className='md:ml-10 sm:ml-8 ml-4 cursor-pointer'>
-                <Link href={`/`}><img src='https://raw.githubusercontent.com/VitorMendonca62/biblioteca-etepam/main/public/assets/img/etepam-logo-fechada.png' alt="logo" className='w-7/12'/></Link>
-            </div>
+            <Link href='/'>
+                <div id='logo-container' className='md:ml-10 sm:ml-8 ml-4 cursor-pointer'>
+                    <Logo className='hidden md:block' />
+                    <img src='https://raw.githubusercontent.com/VitorMendonca62/biblioteca-etepam/main/public/assets/img/etepam-logo-fechada.png' alt="logo" className='w-7/12 md:hidden'/>
+                </div>
+            </Link>
 
             <div id='icons-bar' className='flex justify-end md:mr-8 sm:mr-6 space-x-6 mr-2 w-2/3'>
 
@@ -54,3 +59,5 @@ export default function NavBar({ handleInputValue }) {
         </nav>
     )
 }
+
+export default NavBar
