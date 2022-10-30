@@ -1,6 +1,7 @@
 import { FaStar } from 'react-icons/fa';
 import Layout from '../../components/Layout';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ReactElement, ReactNode } from 'react';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { PrismaClient } from '@prisma/client';
@@ -20,7 +21,7 @@ const Book: NextPageWithLayout = (book : Book) => {
         <main className="sm:grid grid-cols-[40%_40%] w-full h-full primary-glass pt-5 rounded-lg">
             <section id="title-cover" className="mx-auto space-y-10">
                 <h1 className="text-gray-200 border-b border-gray-800 p-4 text-center text-lg font-semibold w-full">{book.title}</h1>
-                <img src={book.linkImagem} alt="book cover" className="w-5/12 sm:w-10/12 mx-auto" />
+                <Image src={book.linkImagem} alt="book cover" className="w-5/12 sm:w-10/12 mx-auto" />
             </section>
 
             <section id="book-info" className="text-gray-200 py-5 px-4 space-y-3 my-5 md:my-16">
