@@ -5,8 +5,10 @@ export default function Card({title, author, linkImagem}: Book) {
     return(
         <div id='card' className='group relative cursor-pointer overflow-hidden mx-8'>
                 <div className="flex justify-center">
-                    <Image src={linkImagem} alt="Capa livro" className="w-full scale-130 transition delay-200 ease-out
-                    group-hover:scale-110 group-hover:opacity-25 group-hover:-translate-y-4" />
+                    <div className="w-full scale-130 transition delay-200 ease-out
+                    group-hover:scale-110 group-hover:opacity-25 group-hover:-translate-y-4 relative text-center">
+                        <Image src={linkImagem} width={200} height={300} alt="Capa livro" />
+                    </div>
                 </div>
                 <div className="text-center text-gray-200 absolute left-0 bottom-0 w-full p-4">
                     <h1 className="font-semibold text-lg opacity-0 translate-y-4 transition ease-out delay-300 

@@ -2,6 +2,7 @@ import React, { DetailedHTMLProps, PropsWithChildren, useState } from 'react'
 import { FaSistrix, FaHeart, FaUser } from 'react-icons/fa'
 import Link from 'next/link'
 import Image from 'next/image'
+import logoFechada from '../public/etepam-logo-fechada.png'
 import Logo from '../public/etepam-logo-lg.svg'
 import { NextPage } from 'next'
 import { HandleInputValue } from './Layout'
@@ -28,8 +29,10 @@ const NavBar: NextPage = ({handleInputValue}: HandleInputValue) => {
 
             <Link href='/'>
                 <div id='logo-container' className='md:ml-10 sm:ml-8 ml-4 cursor-pointer'>
-                    <Logo className='hidden md:block' />
-                    <Image src='https://raw.githubusercontent.com/VitorMendonca62/biblioteca-etepam/main/public/assets/img/etepam-logo-fechada.png' alt="logo" className='w-7/12 md:hidden'/>
+                    <Logo className='hidden lg:block' />
+                    <div className='w-7/12 block lg:hidden relative'>
+                        <Image src="https://res.cloudinary.com/dt1vs4u72/image/upload/v1667547452/etepam-logo-fechada_xzxqpn.png" alt="logo" width={58} height={63}/>
+                    </div>
                 </div>
             </Link>
 

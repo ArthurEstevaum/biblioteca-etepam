@@ -15,9 +15,11 @@ const SearchBooks: NextPageWithLayout = ({books}: BookProps) => {
         <main className="primary-glass min-w-screen min-h-screen">
             <ul>
                 {filteredBooksByInput.map((book) => <Link href={`/books/${book.id}`} key={book.id}>
-                    <li className="text-gray-200 border-b border-gray-800 py-3
+                    <li className="sm:flex sm:items-center text-gray-200 border-b border-gray-800 py-3
                     space-x-5 ml-3">
-                        <Image src={book.linkImagem} alt="book cover" className="lg:ml-[30vh] lg:mr-[15vh] ml-5 mr-3 w-3/12 sm:w-1/12 inline mx-auto cursor-pointer" />
+                        <div className="relative lg:ml-[30vh] lg:mr-[15vh] ml-5 mr-3 w-3/12 sm:w-1/12 inline mx-auto cursor-pointer">
+                            <Image src={book.linkImagem} alt="book cover" width={150} height={220} />
+                        </div>
                         <h1 className="sm:inline font-semibold text-lg cursor-pointer">{book.title} </h1>
                         <h2 className="sm:inline font-medium text-base">{book.categories.reduce((prev, current) => prev + current.category + ', ', '')}</h2>
                         <h3 className="sm:inline font-normal text-sm">{book.author} </h3>
