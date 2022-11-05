@@ -1,11 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
-}
-
-module.exports = nextConfig
-
 module.exports = {
   webpack(config) {
     config.module.rules.push({
@@ -14,5 +7,10 @@ module.exports = {
     });
 
     return config;
-  }
+  },
+  swcMinify: true,
+  reactStrictMode: true,
+  images: {
+    domains: ['res.cloudinary.com'],
+  },
 };

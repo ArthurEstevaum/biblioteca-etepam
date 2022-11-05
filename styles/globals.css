@@ -34,7 +34,7 @@ label {
     @apply block text-gray-400 
 }
 
-input, select {
+.input, select {
     @apply bg-black opacity-40
      rounded-lg pr-5 pl-2 py-1
      w-2/3 md:w-1/2 lg:w-5/12 text-sm
@@ -49,4 +49,16 @@ input, select {
     bg-black opacity-40 border border-gray-600
     p-2 rounded-md hover:ring-2
     hover:opacity-100 ease-in-out duration-300
+}
+
+html {
+    @apply max-h-screen
+}
+
+body {
+    @apply min-h-screen
+}
+
+#__next {
+    @apply min-h-screen
 }

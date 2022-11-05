@@ -1,8 +1,8 @@
 export default function Login() {
     return (
-        <div className="bg-gray-100 bg-cover w-full h-screen" style={{backgroundImage: 'url(/background.png)'}}>
-            <main className="w-10/12 sm:w-7/12 lg:w-4/12 m-auto space-y-6 py-[10vh]">
-                <form action="">
+        <div className="bg-gray-100 bg-cover min-h-screen" style={{backgroundImage: 'url(/background.png)'}}>
+            <main className="w-10/12 sm:w-6/12 lg:w-5/12 m-auto space-y-6 py-[10vh]">
+                <form onSubmit={(event) => event.preventDefault}>
                     <div id="title" className="secondary-glass border-b border-gray-800 py-8 px-2 space-y-4 sm:space-y-0 rounded-t-lg">
                         <a href=" /">
                             <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 ml-4 sm:ml-10 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
@@ -14,10 +14,10 @@ export default function Login() {
 
                     <div className="primary-glass text-center space-y-3 pt-8 rounded-b-lg">
                         <label htmlFor="Email">Email institucional</label>
-                        <input type="email" name="Email" id="Email" placeholder="seunome@aluno.educacao.pe.gov.br" />
+                        <input type="email" name="Email" id="Email" placeholder="seunome@aluno.educacao.pe.gov.br" className="input" required />
 
                         <label htmlFor="Senha">Senha</label>
-                        <input type="password" name="Senha" id="Senha" placeholder="Senha" />
+                        <input type="password" name="Senha" id="Senha" placeholder="Senha" className="input" required />
 
                         <div className="pb-8"><button type="submit" className="button mt-10">Entrar</button></div>
                     </div>
