@@ -6,7 +6,7 @@ import { ReactNode, ReactElement } from "react";
 import { inputContext } from "../components/Layout";
 import { useContext } from "react";
 import { BookProps } from ".";
-import { PrismaClient } from "@prisma/client";
+import { prisma } from "../lib/prismaClient";
 
 const SearchBooks: NextPageWithLayout = ({books}: BookProps) => {
     const inputValue = useContext(inputContext)
@@ -31,7 +31,6 @@ const SearchBooks: NextPageWithLayout = ({books}: BookProps) => {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-    const prisma = new PrismaClient()
     const books = await prisma.book.findMany({
         include: {
             categories: true

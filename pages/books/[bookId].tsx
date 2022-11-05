@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ReactElement, ReactNode } from 'react';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
-import { PrismaClient } from '@prisma/client';
+import { prisma } from '../../lib/prismaClient';
 import { Book } from '..';
 
 const Book: NextPageWithLayout = (book : Book) => {
@@ -52,8 +52,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
     //@ts-ignore
     const bookId = parseInt(params.bookId)
 
-    const prisma = new PrismaClient()
-
     const book = await prisma.book.findUnique({
         where: {
             id: bookId
@@ -68,8 +66,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-
-    const prisma = new PrismaClient()
 
     const data = await prisma.book.findMany()
 

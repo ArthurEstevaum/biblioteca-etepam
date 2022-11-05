@@ -6,14 +6,14 @@ import Link from "next/link";
 
 export default function Carousel({ books }) {
     return (
-        <div className="2xl:mx-auto 2xl:container flex justify-center">
+        <div className="2xl:mx-auto 2xl:container flex justify-center relative">
             <div className="2xl:px-20 px-6 py-6 w-full lg:w-4/5">
                 {/* Carousel for Small-Sized Screen */}
-                <CarouselProvider className="relative block sm:hidden" naturalSlideWidth={100} isIntrinsicHeight={true} totalSlides={books.length} visibleSlides={2} step={1} infinite={true}>
+                <CarouselProvider className="block sm:hidden" naturalSlideWidth={100} isIntrinsicHeight={true} totalSlides={books.length} visibleSlides={2} step={1} infinite={true}>
                     <div className="js-flickity flex justify-center items-center">
-                        <ButtonBack role="button" aria-label="slide backward" className="w-12 h-12 md:w-14 md:h-14 rounded-full flex justify-center items-center bg-white border border-gray-300 hover:bg-gray-400 absolute z-30 left-0 ml-8 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer" id="prev">
+                        <ButtonBack role="button" aria-label="slide backward" className="w-12 h-12 md:w-14 md:h-14 rounded-full flex justify-center items-center hover:bg-white hover:bg-opacity-40 absolute z-30 -left-5 ml-8 focus:bg-white focus:bg-opacity-40 cursor-pointer" id="prev">
                             <svg width={8} height={14} viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M7 1L1 7L7 13" stroke="black" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                                <path d="M7 1L1 7L7 13" stroke="white" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
                         </ButtonBack>
                         <Slider>
@@ -21,29 +21,29 @@ export default function Carousel({ books }) {
                                 <Link href={`/books/${book.id}`}>
                                     <div className="gallery-cell lg:mr-7 mr-6 lg:w-1/2 sm:w-96 w-full h-full">
                                         <div className="relative w-full h-full lg:block hidden">
-                                            <Card title={book.title} author={book.author} linkImagem={book.linkImagem} />
+                                            <Card title={book.title} author={book.author} linkImagem={book.linkImagem} synopsis={book.synopsis} />
                                         </div>
                                         <div className="relative w-full h-full lg:hidden">
-                                            <Card title={book.title} author={book.author} linkImagem={book.linkImagem} />
+                                            <Card title={book.title} author={book.author} linkImagem={book.linkImagem} synopsis={book.synopsis} />
                                         </div>
                                     </div>
                                 </Link>
                             </Slide>))}
                         </Slider>
-                        <ButtonNext role="button" aria-label="slide forward" className="w-12 h-12 md:w-14 md:h-14 rounded-full flex justify-center items-center bg-white border border-gray-300 hover:bg-gray-400 absolute z-30 right-0 mr-8 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800" id="next">
+                        <ButtonNext role="button" aria-label="slide forward" className="w-12 h-12 md:w-14 md:h-14 rounded-full flex justify-center items-center hover:bg-white hover:bg-opacity-40 absolute z-30 -right-5 mr-8 focus:bg-white focus:bg-opacity-40" id="next">
                             <svg width={8} height={14} viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 1L7 7L1 13" stroke="black" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                                <path d="M1 1L7 7L1 13" stroke="white" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
                         </ButtonNext>
                     </div>
                 </CarouselProvider>
 
                 {/* Carousel for Medium and Large-Sized Screen */}
-                <CarouselProvider className="relative hidden sm:block" naturalSlideWidth={100} isIntrinsicHeight={true} totalSlides={books.length} visibleSlides={2} step={1} infinite={true} currentSlide={1}>
+                <CarouselProvider className="hidden sm:block" naturalSlideWidth={100} isIntrinsicHeight={true} totalSlides={books.length} visibleSlides={2} step={1} infinite={true} currentSlide={1}>
                     <div className="js-flickity flex justify-center items-center">
-                        <ButtonBack role="button" aria-label="slide backward" className="w-12 h-12 md:w-14 md:h-14 rounded-full flex justify-center items-center bg-white border border-gray-300 hover:bg-gray-400 absolute z-30 left-0 ml-8 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer" id="prev">
+                        <ButtonBack role="button" aria-label="slide backward" className="w-12 h-12 md:w-14 md:h-14 rounded-full flex justify-center items-center hover:bg-white hover:bg-opacity-40 absolute z-30 left-28 ml-8 focus:bg-white focus:bg-opacity-40 cursor-pointer" id="prev">
                             <svg width={8} height={14} viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M7 1L1 7L7 13" stroke="black" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                                <path d="M7 1L1 7L7 13" stroke="white" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
                         </ButtonBack>
                         <Slider className="carousel__sliderLarge">
@@ -52,18 +52,18 @@ export default function Carousel({ books }) {
                                 <Link href={`/books/${book.id}`}>
                                     <div className="gallery-cell w-full h-full">
                                         <div className="relative w-full h-full lg:block hidden">
-                                            <Card title={book.title} author={book.author} linkImagem={book.linkImagem} />
+                                            <Card title={book.title} author={book.author} linkImagem={book.linkImagem} synopsis={book.synopsis} />
                                         </div>
                                         <div className="relative w-full h-full lg:hidden">
-                                            <Card title={book.title} author={book.author} linkImagem={book.linkImagem} />
+                                            <Card title={book.title} author={book.author} linkImagem={book.linkImagem} synopsis={book.synopsis} />
                                         </div>
                                     </div>
                                 </Link>
                             </Slide>))}
                         </Slider>
-                        <ButtonNext role="button" aria-label="slide forward" className="w-12 h-12 md:w-14 md:h-14 rounded-full flex justify-center items-center bg-white border border-gray-300 hover:bg-gray-400 absolute z-30 right-0 mr-8 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800" id="next">
+                        <ButtonNext role="button" aria-label="slide forward" className="w-12 h-12 md:w-14 md:h-14 rounded-full flex justify-center items-center hover:bg-white hover:bg-opacity-40 absolute z-30 right-28 mr-8 focus:bg-white focus:bg-opacity-40" id="next">
                             <svg width={8} height={14} viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 1L7 7L1 13" stroke="black" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                                <path d="M1 1L7 7L1 13" stroke="white" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
                         </ButtonNext>
                     </div>

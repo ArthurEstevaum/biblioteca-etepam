@@ -3,7 +3,8 @@ import BookCatalog from '../components/BookCatalog'
 import Layout from '../components/Layout'
 import { ReactNode } from 'react'
 import { GetStaticProps, NextPage } from 'next'
-import {Categories, PrismaClient} from '@prisma/client'
+import { prisma } from '../lib/prismaClient'
+import { Categories } from '@prisma/client'
 import { ReactElement } from 'react'
 
 export type BookProps = {
@@ -31,7 +32,6 @@ const Home: NextPageWithLayout = ({ books }: BookProps) => {
 }
 
 export const getStaticProps: GetStaticProps = async() => {
-    const prisma = new PrismaClient()
     const books = await prisma.book.findMany({
         include: {
             categories: true
