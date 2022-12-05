@@ -33,7 +33,7 @@ const Login: NextPage = () => {
 
     return (
         <div className="bg-gray-100 bg-cover min-h-screen" style={{backgroundImage: 'url(/background.png)'}}>
-            <main className="w-10/12 sm:w-6/12 lg:w-5/12 m-auto space-y-6 md:py-[10vh]">
+            <main className="w-12/12 sm:w-6/12 lg:w-5/12 m-auto space-y-6 md:py-[10vh]">
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div id="title" className="secondary-glass border-b border-gray-800 py-8 px-2 space-y-4 sm:space-y-0 rounded-t-xl">
                         <Link href="/">
@@ -60,7 +60,7 @@ const Login: NextPage = () => {
 
                         <div className="pb-8 space-y-5">
                             <button type="submit" className="button mt-10 py-2 px-3 block m-auto">Entrar</button>
-                            <Link href="/forms/CadastroUser">
+                            <Link href="/CadastroUser">
                                 <h2 className="text-gray-500 hover:text-gray-200 block text-center pb-10 cursor-pointer">Não tem uma conta? Cadastre-se!</h2>
                             </Link>
                         </div>

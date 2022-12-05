@@ -18,8 +18,7 @@ export async function middleware(req: NextRequest) {
     //@ts-ignore
     if(verified.payload.data.isAdmin && req.nextUrl.pathname.startsWith('/admin')) {
         return NextResponse.next() //Give access to admin pages
-    } else if(req.nextUrl.pathname.startsWith('/FavouriteBooks')) {
-        //@ts-ignore
+    } else if(req.nextUrl.pathname.startsWith('/FavouriteBooks') || req.nextUrl.pathname.startsWith('/Profile')) {
         return NextResponse.next() //Give acess to profile page
     }
     url.pathname = '/404'

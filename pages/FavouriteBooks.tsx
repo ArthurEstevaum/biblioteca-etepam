@@ -1,4 +1,5 @@
 import { GetServerSideProps, NextPage } from "next";
+import Link from "next/link";
 import { ReactElement, ReactNode } from "react";
 import Layout from "../components/Layout";
 import jwt from "jsonwebtoken"
@@ -11,12 +12,17 @@ import { Book } from ".";
 const FavouriteBooks: NextPageWithLayout = (props: UserFavouriteBooks) => {
     const { userFavouriteBooks } = props
     const { favouriteBooks } = userFavouriteBooks
-    console.log(favouriteBooks)
     return (
         <div className="bg-gray-100 bg-cover min-h-screen" style={{backgroundImage: 'url(/background.png)'}}>
             <main className="w-full h-full primary-glass p-10">
                 <ul className="flex flex-wrap align-center justify-center">
-                    {favouriteBooks.map((book: Book) =><li key={book.id} className="my-4 md:my-10"><Card title={book.title} author={book.author} linkImagem={book.linkImagem} synopsis={book.synopsis} /></li>)}
+                    {favouriteBooks.map((book: Book) =><li key={book.id} className="my-4 md:my-10">
+                                <Link href={`/books/${book.id}`}>
+                                    <div>
+                                        <Card title={book.title} author={book.author} linkImagem={book.linkImagem} synopsis={book.synopsis} />
+                                    </div>
+                                </Link>
+                        </li>)}
                 </ul>
             </main>
         </div>

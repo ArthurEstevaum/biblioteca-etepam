@@ -17,12 +17,12 @@ const AdminDashboard: NextPage = () => {
                     <div className="w-9/12 lg:w-5/12 mx-auto cursor-pointer text-center text-gray-200 px-6 py-2
                     hover:bg-blue-900 rounded-xl
                     transition duration-500 ease-in-out bg-blue-600">
-                        <Link href="/CadastroBooks">Cadastrar livro</Link>
+                        <Link href="/admin/CadastroBook">Cadastrar livro</Link>
                     </div>
                     <div className="w-9/12 lg:w-5/12 mx-auto cursor-pointer text-center text-gray-200 px-6 py-2
                     hover:bg-blue-900 rounded-xl
                     transition duration-500 ease-in-out bg-blue-600">
-                        <Link href="/CadastroBooks">Acessar banco de dados</Link>
+                        <Link href="https://cloud.prisma.io/etepam-biblioteca/biblioteca-etepam/production/databrowser">Acessar banco de dados</Link>
                     </div>
                 </section>
             </main>

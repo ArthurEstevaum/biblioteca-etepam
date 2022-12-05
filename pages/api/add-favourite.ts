@@ -11,10 +11,17 @@ const handler: NextApiHandler = async(req: NextApiRequest, res: NextApiResponse)
         return res.status(400).json({message: 'Você deve estar logado para favoritar um livro'})
     }
     const verifiedToken = jwt.verify(cookie, process.env.JWT_SECRET)
-    const alreadyFavourite = await prisma.user.findUnique({
+    const alreadyFavourite = await prisma.user.findFirst({
         where: {
             //@ts-ignore
-            matricula: verifiedToken.data.matricula
+            matricula: verifiedToken.data.matricula,
+            AND: {
+                favouriteBooks: {
+                    some: {
+                        id: bookId
+                    }
+                }
+            }
         }
     })
     if(!alreadyFavourite) {
