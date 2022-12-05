@@ -12,9 +12,9 @@ export default function Card({title, author, linkImagem, synopsis}: Book) {
                 </div>
                 <div className="text-center text-gray-200 absolute left-0 bottom-0 w-full p-4">
                     <h1 className="font-semibold text-base opacity-0 translate-y-4 transition ease-out delay-300 
-                    group-hover:opacity-100 group-hover:-translate-y-12">{author}</h1>
+                    lg:group-hover:opacity-100 lg:group-hover:-translate-y-12">{author}</h1>
                     <h2 className="opacity-0 translate-y-4 transition ease-out delay-300 
-                    group-hover:opacity-100 group-hover:-translate-y-12 text-sm">{synopsis.substring(0,70) + '...'}
+                    lg:group-hover:opacity-100 lg:group-hover:-translate-y-12 text-sm">{synopsis.substring(0,70) + '...'}
                     <span className="text-base font-bold">Ler mais</span></h2>
                 </div>
                 <h1 className="text-center text-gray-200 font-bold text-md lg:text-lg">{title}</h1>

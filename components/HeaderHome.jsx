@@ -31,8 +31,8 @@ export default function HeaderHome() {
                     </Slide>
                     <Slide index={3}>
                         <div className="w-2/3 ml-[10vw] sm:ml-[15vw]">
-                            <h1 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-100">Baixe os livros em domínio público</h1>
-                            <h2 className="sm:text-lg md:text-xl lg:text-2xl font-semibold text-gray-100">E leia em qualquer lugar</h2>
+                            <h1 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-100">Solicite os livros</h1>
+                            <h2 className="sm:text-lg md:text-xl lg:text-2xl font-semibold text-gray-100">e consulte-os de qualquer lugar</h2>
                         </div>
                     </Slide>
                 </Slider>
