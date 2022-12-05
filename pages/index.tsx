@@ -6,6 +6,7 @@ import { GetStaticProps, NextPage } from 'next'
 import { prisma } from '../lib/prismaClient'
 import { ReactElement } from 'react'
 import { Categories } from '@prisma/client'
+import { useRouter } from 'next/router'
 
 export type BookProps = {
     books: Book[]
