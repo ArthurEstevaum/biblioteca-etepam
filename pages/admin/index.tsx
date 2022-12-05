@@ -1,7 +1,9 @@
 import { NextPage } from "next";
 import Link from "next/link";
+import Router from "next/router";
 
 const AdminDashboard: NextPage = () => {
+    Router.reload()
     return (
         <div className="bg-gray-100 bg-cover min-h-screen" style={{backgroundImage: 'url(/background.png)'}}>
             <main className="w-12/12 sm:w-6/12 lg:w-4/12 m-auto md:py-[10vh]">

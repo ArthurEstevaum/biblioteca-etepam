@@ -6,8 +6,10 @@ import { useState } from "react"
 import { FaCheckCircle } from "react-icons/fa"
 import { VscError } from "react-icons/vsc"
 import Link from "next/link"
+import Router from "next/router"
 
 const CadastroBook: NextPage = () => {
+    Router.reload()
     const { register, handleSubmit } = useForm()
     async function onSubmit(book: BookRegisterInput) {
         const jsonBook = JSON.stringify(book)

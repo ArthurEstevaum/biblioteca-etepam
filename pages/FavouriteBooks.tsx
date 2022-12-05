@@ -7,11 +7,13 @@ import { prisma } from "../lib/prismaClient";
 import { UserFavouriteBooks } from "../types/userQueries";
 import Card from "../components/Card";
 import { Book } from ".";
+import Router from "next/router";
 
 
 const FavouriteBooks: NextPageWithLayout = (props: UserFavouriteBooks) => {
     const { userFavouriteBooks } = props
     const { favouriteBooks } = userFavouriteBooks
+    Router.reload()
     return (
         <div className="bg-gray-100 bg-cover min-h-screen" style={{backgroundImage: 'url(/background.png)'}}>
             <main className="w-full h-full primary-glass p-10">
