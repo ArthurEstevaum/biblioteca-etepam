@@ -4,7 +4,6 @@ import Layout from '../components/Layout'
 import { ReactNode } from 'react'
 import { GetStaticProps, NextPage } from 'next'
 import { prisma } from '../lib/prismaClient'
-import { Categories } from '@prisma/client'
 import { ReactElement } from 'react'
 
 export type BookProps = {
@@ -19,7 +18,7 @@ export type Book = {
     stars?: number,
     quantidade?: number,
     userId?: number,
-    categories?: Categories[]
+    categories?: []
     key?: number
 }
 
