@@ -47,7 +47,7 @@ label {
 .button {
     @apply mt-10 text-gray-200
     bg-black opacity-40 border border-gray-600
-    p-2 rounded-md hover:ring-2
+    rounded-md hover:ring-2
     hover:opacity-100 ease-in-out duration-300
 }
 

@@ -2,12 +2,12 @@ import React, { DetailedHTMLProps, PropsWithChildren, useState } from 'react'
 import { FaSistrix, FaHeart, FaUser } from 'react-icons/fa'
 import Link from 'next/link'
 import Image from 'next/image'
-import logoFechada from '../public/etepam-logo-fechada.png'
 import Logo from '../public/etepam-logo-lg.svg'
 import { NextPage } from 'next'
 import { HandleInputValue } from './Layout'
 
 const NavBar: NextPage = ({handleInputValue}: HandleInputValue) => {
+
     const inputStyles = {
         hidden: 'hidden',
         active: 'inline'
@@ -52,13 +52,21 @@ const NavBar: NextPage = ({handleInputValue}: HandleInputValue) => {
                     onChange={handleInputValue} />
                 </div>
 
-                <button className="text-gray-100 hover:text-gray-900 hover:bg-gray-100 hover:opacity-25 sm:px-4 rounded-full transition duration-500 ease-in-out">
-                    <FaHeart />
-                </button>
+                <Link href="/FavouriteBooks">
+                    <div className="flex justify-center items-center space-x-3 text-gray-100 hover:text-gray-900
+                    hover:bg-gray-100 hover:opacity-25 sm:px-4 rounded-full transition duration-500 ease-in-out cursor-pointer">
+                        <FaHeart className='md:text-xl' />
+                        <p className='hidden md:block text-xs'>Favoritos</p>
+                    </div>
+                </Link>
 
-                <button className="text-gray-100 hover:text-gray-900 hover:bg-gray-100 hover:opacity-25 sm:px-4 rounded-full transition duration-500 ease-in-out">
-                    <FaUser />
-                </button>
+                <Link href="/Profile">
+                    <div className="flex justify-center items-center space-x-3 text-gray-100 hover:text-gray-900
+                    hover:bg-gray-100 hover:opacity-25 sm:px-4 rounded-full transition duration-500 ease-in-out cursor-pointer">
+                        <FaUser className='md:text-2xl' />
+                        <p className='hidden md:block text-xs'>Meu usuário</p>
+                    </div>
+                </Link>
             </div> 
         </nav>
     )

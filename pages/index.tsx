@@ -4,22 +4,24 @@ import Layout from '../components/Layout'
 import { ReactNode } from 'react'
 import { GetStaticProps, NextPage } from 'next'
 import { prisma } from '../lib/prismaClient'
-import { Categories } from '@prisma/client'
 import { ReactElement } from 'react'
+import { Categories } from '@prisma/client'
+import { useRouter } from 'next/router'
 
 export type BookProps = {
     books: Book[]
 }
 export type Book = {
-    id: number,
+    id?: number,
     title: string,
     author: string,
     synopsis: string,
     linkImagem: string,
-    stars: number,
-    quantidade: number,
+    stars?: number,
+    quantidade?: number,
     userId?: number,
-    categories: Categories[]
+    categories?: Categories[]
+    key?: number
 }
 
 const Home: NextPageWithLayout = ({ books }: BookProps) => {
