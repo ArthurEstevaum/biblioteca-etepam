@@ -5,6 +5,7 @@ import { ReactNode } from 'react'
 import { GetStaticProps, NextPage } from 'next'
 import { prisma } from '../lib/prismaClient'
 import { ReactElement } from 'react'
+import { Categories } from '@prisma/client'
 
 export type BookProps = {
     books: Book[]
@@ -18,7 +19,7 @@ export type Book = {
     stars?: number,
     quantidade?: number,
     userId?: number,
-    categories?: []
+    categories?: Categories[]
     key?: number
 }
 

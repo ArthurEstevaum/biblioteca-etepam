@@ -15,7 +15,7 @@ const FavouriteBooks: NextPageWithLayout = (props: UserFavouriteBooks) => {
     return (
         <div className="bg-gray-100 bg-cover min-h-screen" style={{backgroundImage: 'url(/background.png)'}}>
             <main className="w-full h-full primary-glass p-10">
-                <ul className="flex flex-wrap align-center justify-center   ">
+                <ul className="flex flex-wrap align-center justify-center">
                     {favouriteBooks.map((book: Book) =><li key={book.id} className="my-4 md:my-10"><Card title={book.title} author={book.author} linkImagem={book.linkImagem} synopsis={book.synopsis} /></li>)}
                 </ul>
             </main>

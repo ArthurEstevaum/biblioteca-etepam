@@ -1,5 +1,5 @@
 import { NextPage } from "next"
-import { set, useForm } from "react-hook-form"
+import { useForm } from "react-hook-form"
 import { BookRegisterInput } from "../../types/BookRegisterInput"
 import categories from "../../lib/categories"
 import { useState } from "react"
