@@ -8,6 +8,7 @@ import { VscError } from "react-icons/vsc"
 import Link from "next/link"
 
 const CadastroBook: NextPage = () => {
+    Router.reload()
     const { register, handleSubmit } = useForm()
     async function onSubmit(book: BookRegisterInput) {
         const jsonBook = JSON.stringify(book)
