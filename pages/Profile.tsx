@@ -8,7 +8,6 @@ import { UserInfo } from "../types/userQueries";
 const Profile: NextPage = (props : UserInfo) => {
     const { userInfo } = props
     const router = useRouter()
-    router.reload()
 
     async function logout() {
         const endpoint = "./api/logout"

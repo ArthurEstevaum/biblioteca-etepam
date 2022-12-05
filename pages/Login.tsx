@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form"
 import Link from "next/link"
 import { LoginData } from "../types/UserRegisterInput"
 import { useRouter } from "next/router"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { VscError } from "react-icons/vsc"
 
 const Login: NextPage = () => {
@@ -11,6 +11,9 @@ const Login: NextPage = () => {
     const [serverResponse, setServerResponse] = useState('')
     const { register, handleSubmit } = useForm()
     const router = useRouter()
+    useEffect(() => {
+        router.replace('/Profile')
+    }, [router])
 
     async function onSubmit(loginData: LoginData) {
         const jsonLoginData = JSON.stringify(loginData)
