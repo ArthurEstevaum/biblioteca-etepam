@@ -21,6 +21,7 @@ const handler: NextApiHandler = async(req: NextApiRequest, res: NextApiResponse)
     }
     book.quantity = parseInt(body.quantity)
     book.stars = parseInt(body.stars)
+    console.log(req.method);
     if(req.method !== 'POST') {
         res.status(405).json({message: 'Method not allowed'})
     }
